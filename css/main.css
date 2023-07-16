@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --Pale-Blue : hsl(243, 100%, 93%) ;
+    --Grayish-Blue : hsl(229, 7%, 55%) ; 
+    --Dark-Blue : hsl(228, 56%, 26%) ;
+    --Very-Dark-Blue : hsl(229, 57%, 11%) ;
+    --Gradient-v1 : hsl(6, 100%, 80%) ;
+    --Gradient-v2 : hsl(335, 100%, 65%) ;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    background-color: var(--Very-Dark-Blue);
+    background-image: url(../images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position-y:50vh ;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fylo-container {
+    width: 800px;
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;  
+}
+.fylo-container > div {
+    background-color: var(--Dark-Blue);
+    padding: 25px;
+    box-shadow: 0 15px 30px  hsl(229, 57%, 11% , 50%) ;
+}
+.left-conetnt {
+    width: 38%;
+    border-radius: 10px 100px 10px 10px;
+}
+.right-content {
+    align-self: end;
+    border-radius: 10px;
+    flex-basis: 57%;
+    position: relative;
+}
+.left-conetnt .image {
+    width:100px;
+    margin-bottom: 20px;
+}
+.left-conetnt .image img {
+    max-width: 100%;
+}
+.icons {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.icons li {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 5px;
+}
+.right-content h1 {
+    color: var(--Pale-Blue);
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.right-content h1 span {
+    font-weight: 700
+}
+.right-content .shart {
+    width: 100%;
+    height: 15px;
+    border-radius: 20px;
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.right-content .shart span {
+    display: block;
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    position: relative;
+    left: 3px;
+    background-image: linear-gradient(to right , var(--Gradient-v1) , var(--Gradient-v2));
+    position: relative;
+}
+.right-content .shart span::before {
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.shart-stock {
+    color: var(--Pale-Blue);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.empty-mem {
+    height: 50px;
+    width: 115px;
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--Pale-Blue);
+    padding: 15px;
+    border-radius: 10px;
+}
+.empty-mem::after {
+    content: "" ;
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent var(--Pale-Blue) transparent transparent;
+
+}
+.empty-mem span {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--Grayish-Blue);
+}
+@media (max-width : 768px) {
+    .fylo-container > div {
+       flex-basis: 100%;
+    }
+    .empty-mem {
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .empty-mem::after {
+       display: none;
+    }
+
+}
